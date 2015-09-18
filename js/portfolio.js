@@ -17,11 +17,14 @@ $(function(){
 		current.addTo(controller);
 	};
 
-	makeParallax("#section1", "200%", "80%");
-	makeParallax("#section2", "200%", "80%");
-	makeParallax("#section3", "200%", "80%");
-	makeParallax("#section4", "200%", "80%");
-	makeParallax("#section5", "100%", "50%");
+	if ($(window).width > 799){
+		makeParallax("#section1", "200%", "80%");
+		makeParallax("#section2", "200%", "80%");
+		makeParallax("#section3", "200%", "80%");
+		makeParallax("#section4", "200%", "80%");
+		makeParallax("#section5", "100%", "50%");
+	}
+
 
 	var toggleNavBar = TweenMax.fromTo('.navbar', 0.3,
 	    {
