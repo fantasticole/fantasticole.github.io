@@ -23,7 +23,7 @@ $(function(){
 		scrollToProject(linkedProj);
 	}
 
-	$('.projects li>a').click(function(event){
+	$('.projectsNav li>a').click(function(event){
         scrollToProject($(this)[0].hash)
         event.preventDefault();
     });

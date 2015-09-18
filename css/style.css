@@ -432,7 +432,15 @@
 	padding-bottom: 30vh;
 }
 
-#bootstrapOverrides .projects .nav li{
+.projectsNav{
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	height: 60px;
+	margin: 0;
+}
+
+#bootstrapOverrides .projectsNav .nav li{
 	width: 16.5vw;
 }
 
@@ -819,21 +827,17 @@
 		border-bottom: 1px dashed #E1B62F;
 	}
 
-	#bootstrapOverrides .projects .nav{
+	#bootstrapOverrides .projectsNav .nav{
 		height: 60px;
 	}
 
-	#bootstrapOverrides .projects .nav li{
+	#bootstrapOverrides .projectsNav .nav li{
 		display: inline-block;
 		float: left;
 		height: 100%
 	}
 
-	#bootstrapOverrides .projects .navbar{
-		position: fixed;
-	}
-
-	#bootstrapOverrides .projects .navbar-nav{
+	#bootstrapOverrides .projectsNav .navbar-nav{
 		display: none;
 	}
 
