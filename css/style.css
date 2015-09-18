@@ -460,6 +460,10 @@
 		border-radius: 5px;
 	}
 
+	.mobile{
+		display: none;
+	}
+
 	/*Twitterbot timeline.*/
 	#bootstrapOverrides .tweets{
 		background-color: #000;
@@ -827,7 +831,6 @@
 
 	#bootstrapOverrides .projects .navbar{
 		position: fixed;
-    	transform: translateX(0px) translateY(0px);
 	}
 
 	#bootstrapOverrides .projects .navbar-nav{
@@ -880,11 +883,18 @@
 		margin-left: 0;
 	}
 
-		.projectDetails img, .ttt, #bootstrapOverrides .tweets{
+		.projectDetails img, #bootstrapOverrides .tweets{
 			height: 51.4vw;
-			max-height: 50vh;
 			width: 84.2vw;
 			border-radius: 5px;
+		}
+
+		.mobile{
+			display: block;
+		}
+
+		.ttt{
+			display: none;
 		}
 		
 		#bootstrapOverrides .wide{
