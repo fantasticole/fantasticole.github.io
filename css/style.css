@@ -826,8 +826,8 @@
 	}
 
 	#bootstrapOverrides .projects .navbar{
-		position: relative;
-		margin: 0 auto;
+		position: fixed;
+    	transform: translateX(0px) translateY(0px);
 	}
 
 	#bootstrapOverrides .projects .navbar-nav{
