@@ -825,6 +825,10 @@
 		height: 100%
 	}
 
+	#bootstrapOverrides .projects .navbar{
+		margin: 0 auto;
+	}
+
 	#bootstrapOverrides .projects .navbar-nav{
 		display: none;
 	}
