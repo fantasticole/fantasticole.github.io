@@ -16,15 +16,37 @@ $(function(){
         }
 	}
 
+	function scrollToMobileProject(loc){
+        if ($(window).width() > 550){
+	        $('html, body').animate({
+	            scrollTop: $(loc).offset().top - 50
+	        }, 600);
+        }
+        else{
+	        $('html, body').animate({
+	            scrollTop: $(loc).offset().top - 50
+	        }, 600);
+        }
+	}
+
 	var here = window.location.href;
 
 	if (here.indexOf('#') > -1 && $(window).width() > 799){
 		var linkedProj = here.slice(here.indexOf('#'));
 			scrollToProject(linkedProj);
 	}
+	else if (here.indexOf('#') > -1 && $(window).width() < 800){
+		var linkedProj = here.slice(here.indexOf('#'));
+			scrollToMobileProject(linkedProj);
+	}
 
 	$('.projectsNav li>a').click(function(event){
-        scrollToProject($(this)[0].hash)
+		if ($(window).width() > 799){
+	        scrollToProject($(this)[0].hash)
+	    }
+		if ($(window).width() < 800){
+	        scrollToMobileProject($(this)[0].hash)
+	    }
         event.preventDefault();
     });
 
