@@ -41,7 +41,7 @@
 #bootstrapOverrides .navbar{
   background-color: #000;
   border-color: #000;
-  max-height: 55px;
+  height: 50px;
   margin-bottom: 10px;
 }
 
@@ -218,22 +218,30 @@
 		overflow: visible;
 	    width: 80vw;
 	    position: relative;
-	    left: 10vw;
+	    left: 5vw;
 	}
 
 	#contactForm{
 		position: relative;
 		width: 90vw;
+		height: calc(4em + 130px);
 		font-family: 'Amatic SC', cursive;
 		letter-spacing: 2px;
-		padding-bottom: 30px;
+		display: inline-block;
 	}
+
+		.contactForm{
+			position: absolute;
+			top: 0;
+			width: 90vw;
+			height: 115px;
+		}
 
 		.contactLeft{
 			position: absolute;
 			left: 0;
-			min-width: 30vw;
-			min-height: 115px;
+			width: 33vw;
+			height: 115px;
 			margin-right: 50px;
 		}
 
@@ -241,7 +249,7 @@
 			position: absolute;
 			right: 0;
 			width: 55vw;
-			min-height: 115px;
+			height: 115px;
 		}
 
 		.ss-form-question{
@@ -262,31 +270,33 @@
 		input{
 			width: 160px;
 			margin-left: 10px;
+			border: none;
 		}
 
-		input, textarea{
+		#bootstrapOverrides input, #bootstrapOverrides textarea{
 			float: right;
 			border-radius: 5px;
 			font-family: 'Slabo 27px', serif;
+			color: #000;
+			padding-left: 5px;
 		}
 
 		textarea{
 			width: 80%;
 			resize: none;
-			height: 21vh;
+			height: 115px;
 		}
 
 		#navigation-table{
 			/*submit button.*/
 			position: relative;
 			width: 10vw;
+			min-width: 40px;
 			left: 40vw;
-			margin-top: 21vh;
-			margin-bottom: 10px;
-			min-width: 38px;
+			margin-top: 135px;
 		}
 
-		#ss-submit{
+		#bootstrapOverrides #ss-submit{
 			/*submit button.*/
 			font-family: 'Amatic SC', cursive;
 			letter-spacing: 2px;
@@ -299,17 +309,10 @@
 			pointer-events: none;
 		}
 
-		#ss-submit:hover{
-			background-color: #fff;
-			color: #000;
-			border: 1px solid red;
-		}
-
 		.instructions{
-			position: relative;
+			position: absolute;
 			bottom: 2vh;
-			padding-bottom: 1vh;
-			left: 15vw;
+			left: 10vw;
 			width: 70vw;
 			font-family: 'Amatic SC', cursive;
 			font-size: 1.3em;
@@ -422,21 +425,20 @@
 
 /*Projects Page*/
 .projects{
-	height: calc(100vh - 60px);
+	height: calc(100vh - 50px);
 	width: 325vw;
 	background-color: #000;
 	background-image: url('../images/projects.png');
 	overflow-x: scroll;
 	overflow-y: hidden;
-	margin-top: 60px;
-	padding-bottom: 30vh;
+	margin-top: 50px;
 }
 
-.projectsNav{
+.projectsNav, #bootstrapOverrides .navbar{
 	width: 100vw;
 	position: fixed;
 	top: 0;
-	height: 60px;
+	height: 50px;
 	margin: 0;
 }
 
@@ -485,7 +487,6 @@
 		#bootstrapOverrides .twitter-follow-button{
 			margin-top: 0.5vw;
 			margin-bottom: 0.5vw;
-			/*height: 20px;*/
 		}
 
 		#bootstrapOverrides #timeline{
@@ -512,7 +513,6 @@
 		}
 
 		#bootstrapOverrides .tweets li{
-			/*padding-top: 3px;*/
 			position: relative;
 			width: 100%;
 			margin: 0px 0px 5px;
@@ -696,7 +696,7 @@
 @media (max-width: 800px){
 	.projectSlides{
 		width: 100vw;
-		top: 10vh;
+		top: calc((82vh - 42vw)/2);
 		bottom: 10vh;
 		height: calc(42vw + 18vh);
 		left: 0;
@@ -746,32 +746,31 @@
 	}
 
 	#contactForm{
-		min-height: 330px;
+		min-height: 320px;
+	}
+
+	.contactForm{
+		height: 250px;
 	}
 
 	.contactLeft{
 		width: 100%;
 		top: 0;
+		height: 115px;
 	}
 
 	.contactRight{
 		width: 100%;
-		bottom: 70px;
-		max-height: 40%;
+		top: 135px;
 	}
 
-	input{
+	input, textarea{
 		width: 80%;
 		margin-left: 0;
 	}
 
-	textarea{
-		width: 80%;
-		height: 23vh;
-	}
-
 	#navigation-table{
-		bottom: -140px;
+		margin-top: 270px;
 		width: 30vw;
 		left: 30vw;
 	}
@@ -828,7 +827,7 @@
 	}
 
 	#bootstrapOverrides .projectsNav .nav{
-		height: 60px;
+		height: 50px;
 	}
 
 	#bootstrapOverrides .projectsNav .nav li{
@@ -858,6 +857,10 @@
 }
 
 @media (max-width: 550px){
+	#contactForm{
+		min-height: 330px;
+	}
+
 	.ss-q-item-label, .instructions{
 		font-size: 1.1em;
 	}

@@ -17,7 +17,7 @@ $(function(){
 		current.addTo(controller);
 	};
 
-	if ($(window).width > 799){
+	if ($(window).width() > 799){
 		makeParallax("#section1", "200%", "80%");
 		makeParallax("#section2", "200%", "80%");
 		makeParallax("#section3", "200%", "80%");
