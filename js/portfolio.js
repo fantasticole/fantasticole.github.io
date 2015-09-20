@@ -25,29 +25,6 @@ $(function(){
 		makeParallax("#section5", "100%", "50%");
 	}
 
-
-	var toggleNavBar = TweenMax.fromTo('.navbar', 0.3,
-	    {
-	    	transform: 'translateX(0px) translateY(-50px)'
-	    },
-	    {
-	    	transform: 'translateX(0px) translateY(0px)'
-	    }
-	);
-
-	// var showNavBar = new ScrollMagic.Scene({triggerElement: "#about"})
-	// showNavBar.setTween(toggleNavBar)
-	// showNavBar.addTo(controller);
-
-	// $(window).resize(function(){
-	// 	if ($(window).width() < 768){
-	// 		showNavBar.enabled(false);
-	// 	}
-	// 	else {
-	// 		showNavBar.enabled(true);
-	// 	}
-	// });
-
 	$(".pageSection a").click(function(event) {
 		$(".navbar-collapse").collapse('hide');
 	});
