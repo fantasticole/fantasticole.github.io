@@ -485,13 +485,12 @@
 	}
 
 		#bootstrapOverrides .twitter-follow-button{
-			margin-top: 0.5vw;
-			margin-bottom: 0.5vw;
+			margin-top: 1vh;
 		}
 
 		#bootstrapOverrides #timeline{
 			position: relative;
-			bottom: calc((3.5vw - 20px)/2);
+			bottom: calc((2.5vw - 1vh - 20px)/2);
 			left: 2vw;
 			top: 0;
 			height: 32vw;
@@ -848,12 +847,69 @@
 	#bootstrapOverrides .nav>li>a:focus, #bootstrapOverrides .nav>li>a:hover{
 		display: block;
 		background-color: #000;
+		height: 100%;
 	}
 
 	.narrow-nav>li>a>i{
-		padding-top: 8px;
 		font-size: 25px;
 	}
+
+	.projects{
+		width: 100vw;
+		height: inherit;
+		padding-bottom: 10px
+	}
+
+	.projectDetails, #mismatch{
+		width: 85vw;
+		padding-left: 0;
+		margin-left: 7.5vw;
+		margin-bottom: 0;
+		margin-top: 3vh;
+	}
+
+		.projectDetails img, #bootstrapOverrides .tweets{
+			height: 51.5vw;
+			width: 85vw;
+			border-radius: 5px;
+		}
+		
+		#bootstrapOverrides .wide{
+			width: 100%;
+			height: auto;
+			margin-bottom: 10px;
+		}
+
+		#bootstrapOverrides .narrow{
+			width: 100%;
+			height: auto;
+		}
+
+	#bootstrapOverrides #timeline{
+		left: 2vw;
+		top: 0;
+		bottom: calc((4.5vw - 20px)/2);
+		height: 44vw;
+		width: 81vw;
+	}
+
+	#bootstrapOverrides .tweets ul{
+		height: 42vw;
+		width: 79vw;
+	}
+
+	#bootstrapOverrides .twitter{
+		left: 11vh;
+		width: 54vw;
+	}
+
+	#bootstrapOverrides .tweet{
+		left: 10vh;
+		width: calc(70vw - 10vh);
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+
 }
 
 @media (max-width: 550px){
@@ -876,73 +932,20 @@
 		margin-top: 2vh;
 	}
 
-	.projects{
-		width: 365vw;
-	}
-
-
-	.projectDetails{
-		width: 90vw;
-		padding-left: 5.8vw;
-		margin-bottom: 0;
-	}
-
-	#mismatch{
-		margin-left: 0;
-	}
-
-		.projectDetails img, #bootstrapOverrides .tweets{
-			height: 51.4vw;
-			width: 84.2vw;
-			border-radius: 5px;
-		}
-
-		.mobile{
-			display: block;
-		}
-
-		.ttt{
-			display: none;
-		}
-		
-		#bootstrapOverrides .wide{
-			width: 100%;
-			height: auto;
-			margin-bottom: 10px;
-		}
-
-		#bootstrapOverrides .narrow{
-			width: 100%;
-			height: auto;
-		}
-
 	#bootstrapOverrides #timeline{
-		left: 2vw;
-		top: 0;
-		bottom: calc((4.5vw - 20px)/2);
-		height: 41vw;
-		width: 80vw;
+		height: 42vw;
 	}
 
 	#bootstrapOverrides .tweets ul{
-		height: 39vw;
-		width: 78vw;
+		height: 40vw;
 	}
 
-	#bootstrapOverrides .tweets li{
-		width: 78vw;
+	.mobile{
+		display: block;
 	}
 
-	#bootstrapOverrides .twitter{
-		left: 11vh;
-		width: 54vw;
-	}
-
-	#bootstrapOverrides .tweet{
-		left: 10vh;
-		width: 54vw;
-		padding-left: 1vw;
-		padding-right: 1vw;
+	.ttt{
+		display: none;
 	}
 }
 

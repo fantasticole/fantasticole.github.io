@@ -18,9 +18,9 @@ $(function(){
 
 	var here = window.location.href;
 
-	if (here.indexOf('#') > -1){
+	if (here.indexOf('#') > -1 && $(window).width() > 799){
 		var linkedProj = here.slice(here.indexOf('#'));
-		scrollToProject(linkedProj);
+			scrollToProject(linkedProj);
 	}
 
 	$('.projectsNav li>a').click(function(event){
