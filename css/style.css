@@ -825,7 +825,7 @@
 		border-bottom: 1px dashed #E1B62F;
 	}
 
-	#bootstrapOverrides .projectsNav .nav{
+	#bootstrapOverrides .nav{
 		height: 50px;
 	}
 
@@ -836,7 +836,14 @@
 		width: 16.5vw;
 	}
 
-	#bootstrapOverrides .projectsNav .navbar-nav{
+	#bootstrapOverrides .nav li{
+		display: inline-block;
+		float: left;
+		height: 100%;
+		width: 20vw;
+	}
+
+	#bootstrapOverrides .navbar-nav{
 		display: none;
 	}
 
@@ -868,7 +875,7 @@
 		margin-top: 3vh;
 	}
 
-		.projectDetails img, #bootstrapOverrides .tweets{
+		.projectDetails img, #bootstrapOverrides .tweets, .ttt{
 			height: 51.5vw;
 			width: 85vw;
 			border-radius: 5px;
@@ -933,11 +940,11 @@
 	}
 
 	#bootstrapOverrides #timeline{
-		height: 42vw;
+		height: 41vw;
 	}
 
 	#bootstrapOverrides .tweets ul{
-		height: 40vw;
+		height: 39vw;
 	}
 
 	.mobile{

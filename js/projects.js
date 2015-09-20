@@ -40,7 +40,7 @@ $(function(){
 			scrollToMobileProject(linkedProj);
 	}
 
-	$('.projectsNav li>a').click(function(event){
+	$('nav li>a').click(function(event){
 		if ($(window).width() > 799){
 	        scrollToProject($(this)[0].hash)
 	    }
