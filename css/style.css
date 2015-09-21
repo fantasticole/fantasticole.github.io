@@ -10,6 +10,10 @@
 	position: relative;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 #bootstrapOverrides body, #bootstrapOverrides h1, #bootstrapOverrides h2, #bootstrapOverrides p, i{
 	margin: 0;
 }
@@ -498,7 +502,7 @@
 		#bootstrapOverrides #timeline{
 			position: relative;
 			bottom: calc((2.5vw - 1vh - 20px)/2);
-			left: calc((4vw - 15px)/2);
+			left: 2vw;
 			top: 0;
 			height: 32vw;
 			width: 56vw;
@@ -608,9 +612,10 @@
 		width: 60vw;
 		margin-top: 10px;
 		padding: 5px;
-		padding-right: 20px;
+		padding-right: 5px;
 		background-color: rgba(0, 0, 0, 0.7);
 		border-radius: 5px;
+		margin-bottom: 10px;
 	}
 
 		#bootstrapOverrides .wide{
@@ -624,7 +629,6 @@
 			width: 32%;
 			height: auto;
 			position: relative;
-			left: 1%;
 		}
 
 		.links{
@@ -1008,6 +1012,14 @@
 	.ttt{
 		display: none;
 	}
+
+	.projectInfo{
+		padding-right: 20px;
+	}
+
+		#bootstrapOverrides #timeline{
+			left: calc((4vw - 15px)/2);
+		}
 }
 
 
