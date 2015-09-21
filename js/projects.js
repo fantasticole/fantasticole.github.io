@@ -3,7 +3,7 @@ $(function(){
         var width = $(window).width();
         var oneWidth = parseInt(width)/100;
         if ($(window).width() > 550){
-        	var move = oneWidth*5;
+        	var move = oneWidth*20;
 	        $('html, body').animate({
 	            scrollLeft: $(loc).offset().left - move
 	        }, 600);

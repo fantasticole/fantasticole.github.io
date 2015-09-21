@@ -453,19 +453,20 @@
 
 .projectDetails{
 	height: calc(100vh - 70px);
-	width: 75vw;
-	padding-left: 15vw;
+	width: 60vw;
+	margin-left: 15vw;
 	padding-top: 10px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	float: left;
 	margin-bottom: 10px;
 }
 
 #mismatch{
-	margin-left: 5vw;
+	margin-left: 20vw;
 }
 
-	.projectDetails img, .ttt{
+	.ttt, .mobile{
 		height: 36.3vw;
 		width: 60vw;
 		border-radius: 5px;
@@ -492,7 +493,7 @@
 		#bootstrapOverrides #timeline{
 			position: relative;
 			bottom: calc((2.5vw - 1vh - 20px)/2);
-			left: 2vw;
+			left: calc((4vw - 15px)/2);
 			top: 0;
 			height: 32vw;
 			width: 56vw;
@@ -599,21 +600,26 @@
 	}
 
 	.projectInfo{
+		width: 60vw;
 		margin-top: 10px;
 		padding: 5px;
+		padding-right: 20px;
 		background-color: rgba(0, 0, 0, 0.7);
 		border-radius: 5px;
 	}
-		
+
 		#bootstrapOverrides .wide{
-			width: 39.5vw;
+			width: 67%;
 			height: auto;
-			margin-right: 1vw;
+			position: relative;
+			left: 0;
 		}
 
 		#bootstrapOverrides .narrow{
-			width: 19vw;
+			width: 32%;
 			height: auto;
+			position: relative;
+			left: 1%;
 		}
 
 		.links{
@@ -976,6 +982,16 @@
 
 	.textArea{
 		top: 10vh;
+	}
+}
+
+@-moz-document url-prefix(){
+	.mobile{
+		display: block;
+	}
+
+	.ttt{
+		display: none;
 	}
 }
 
