@@ -5,6 +5,11 @@
 	background-color: #000;
 }
 
+.projectsPage{
+	overflow-y: hidden;
+	position: relative;
+}
+
 #bootstrapOverrides body, #bootstrapOverrides h1, #bootstrapOverrides h2, #bootstrapOverrides p, i{
 	margin: 0;
 }
@@ -427,11 +432,12 @@
 .projects{
 	height: calc(100vh - 50px);
 	width: 325vw;
+	position: absolute;
+	top: 50px;
 	background-color: #000;
 	background-image: url('../images/projects.png');
 	overflow-x: scroll;
 	overflow-y: hidden;
-	margin-top: 50px;
 }
 
 .projectsNav, #bootstrapOverrides .navbar{
@@ -819,6 +825,11 @@
 }
 
 @media (max-width: 768px){
+	.projectsPage{
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
 	#bootstrapOverrides .navbar-collapse{
 		border-color: #0BB4CE;
 	}
@@ -875,6 +886,7 @@
 	}
 
 	.projectDetails, #mismatch{
+		height: calc(100vh - 80px);
 		width: 85vw;
 		padding-left: 0;
 		margin-left: 7.5vw;
@@ -897,6 +909,10 @@
 		#bootstrapOverrides .narrow{
 			width: 100%;
 			height: auto;
+		}
+
+		.projectInfo{
+			width: 85vw;
 		}
 
 	#bootstrapOverrides #timeline{
