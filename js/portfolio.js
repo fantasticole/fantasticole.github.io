@@ -5,7 +5,7 @@ $(function(){
 
 	tl.to(".arrow", 0.6,
 		{
-			top: '8vh',
+			top: '7vh',
 			repeat: -1,
 			yoyo: true
 		});

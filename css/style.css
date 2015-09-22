@@ -712,6 +712,11 @@
 
 
 
+@media (min-width: 2000px){
+	.welcome{
+		height: 38vh;
+	}
+}
 
 @media (max-width: 800px){
 	.projectSlides{
@@ -833,6 +838,16 @@
 }
 
 @media (max-width: 768px){
+	#bootstrapOverrides h1{
+		font-family: 'Amatic SC', cursive;
+		font-size: 9vh;
+	}
+
+	#bootstrapOverrides h2{
+		font-family: 'Amatic SC', cursive;
+		font-size: 7vh;
+	}
+
 	.projectsPage{
 		overflow-y: auto;
 		overflow-x: hidden;
