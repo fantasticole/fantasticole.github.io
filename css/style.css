@@ -144,9 +144,32 @@
 		text-shadow: 2px 2px 5px #971E51;
 	}
 
-	.arrow{
-		position: relative;
-	}
+		.scrollDown{
+			height: 15.5vh;
+			width: 30vw;
+			margin: auto;
+		}
+
+			.scrollDown p{
+				display: none;
+				position: relative;
+				font-family: 'Amatic SC', cursive;
+				letter-spacing: 2px;
+				font-size: 3.5vh;
+				top: 5vh;
+			}
+
+			.scrollDown:hover p{
+				display: block;
+			}
+
+			.scrollDown:hover .arrow{
+				display: none;
+			}
+
+			.arrow{
+				position: relative;
+			}
 
 .infoTab{
 	background-color: #000;
@@ -966,6 +989,20 @@
 }
 
 @media (max-width: 550px){
+	#bootstrapOverrides h1{
+		font-family: 'Amatic SC', cursive;
+		font-size: 8vh;
+	}
+
+	#bootstrapOverrides h2{
+		font-family: 'Amatic SC', cursive;
+		font-size: 6vh;
+	}
+
+	#bootstrapOverrides .welcome p{
+		font-size: 2vh;
+	}
+
 	#contactForm{
 		min-height: 330px;
 	}
