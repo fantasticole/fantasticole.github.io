@@ -20,12 +20,12 @@
 
 #bootstrapOverrides h1{
 	font-family: 'Amatic SC', cursive;
-	font-size: 4em;
+	font-size: 10vh;
 }
 
 #bootstrapOverrides h2{
 	font-family: 'Amatic SC', cursive;
-	font-size: 3em;
+	font-size: 8vh;
 }
 
 #bootstrapOverrides h3{
@@ -128,6 +128,7 @@
 
 	.welcome{
 		min-height: 8em;
+		height: 42vh;
 		width: 50vw;
 		bottom: 20vh;
 		left: 25vw;
@@ -168,6 +169,10 @@
 	#about h1, #background h1, #contact h1{
 		margin: 0;
 		margin-bottom: 10px;
+	}
+
+	#about p, #background p{
+		font-size: 3.5vh;
 	}
 
 	.me{
