@@ -1,3 +1,3 @@
 # fantasticole.github.io
 
-Fantasticole Portfolio Site
+Portfolio Site
