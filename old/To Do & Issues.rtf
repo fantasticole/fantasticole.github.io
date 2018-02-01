@@ -1,0 +1,68 @@
+
+
+
+Minimize project info automatically.
+
+	    <div class="panel-group" id="accordion2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">Words</a>
+              </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+              <div class="panel-body">
+              	<p>Information</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+Issies with accordion:
+
+Multiple menus referring to first panel-collapse, have to update collapseOne to collapseFour.
+
+All '.panel-title a' telling first accordion to collapse when clicked, reather than the corresponding brothers and sisters. Had to find parent and specify action for children of that parent.
+
+
+From Lovisa:
+
+Passing along some very messy notes please read them as a discussion, there is no right or wrong when it comes to web design and UX.
+
+Have you thought about if a user is visually impaired? header nav links seem a little bit small and maybe the yellow against the black might need some more contrast.
+
+The project slider: can you move things around so you don't have to scroll both horisontal and vertical (+ there is inner scrolling for eg the tic tac toe game which makes it a bit jumpy and hard to follow) (its actually easier to follow in mobile size allthough the tic tac toe doesn't scroll there so you can't play)? Can you make some visually distinguish between the print screens and the iframe?
+
+I like that you are really playing with images and colors and trying out stuff, but sometimes consistency is key for a user (doesn't mean you have to give up your artistic and creative side).
+
+Also, have you played with some of the new frameworks? react, angular? next step might be to port your portfolio to some framework and minimise the JQuery (which some people hate, why? dunno, still figuring it out ;)).
+
+I built this site for my friends band in react.js: http://vulkanomusic.com/ its arguable not the best site for a visually impaired nor design consistency/UX either but its good to have that in mind when doing client side programming.
+
+
+
+
+From Allie:
+
+I have some thoughts at various levels of detail, if that makes sense—overall the site is fun and I realize you may not have time to make big changes, but I figured it might be helpful/interesting to share my higher-level thoughts even if you don’t end up using them on this project.
+
+So, big stuff that may or may not be useful on this project:
+- It is sort of counter-intuitive but sometimes a less design-y/simpler site is better when you’re looking specifically for frontend jobs—I had a hard time with this advice since I like designing as well as coding (though if you look at my website you can see I did come around eventually :) ). But sometimes lots of design details can distract from people being able to focus on your FE dev skills, which is what you really want them to be looking at.
+
+- I wonder if not using Bootstrap and starting from scratch might be easier. Sometimes Bootstrap just adds so much stuff to your CSS that’s it more work to override all of its rules than write your own CSS.
+
+Medium-ish things you might apply to this site:
+- I think it might be better to combine your projects page with your other page and just have a single-page vertically-scrolling site. The sideways scrolling on the projects page is really smooth and nicely done, but I think it can help a lot to make your website easy to skim, and it is a little confusing that you can both horizontally and vertically scroll there. I really like the way you’ve written up your projects though—the challenges are great.
+
+Small stuff:
+- I think left aligning most of the text might make it easier to read a look a little neater. Center-aligned headers are great but I often find full sentences/paragraphs look a bit nicer aligned to the left.
+
+- The contrast of the yellow icons on the purple knit background for your contact info is a little hard to say—maybe a darker purple would work? Or adding a transparent overlay behind the icons or something like that.
+
+- Your html and css files look nice and neat, but have you considered concatenating/minifying your javascript files? I think that’s a detail people might look for.
+
+
+

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/style.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Amatic+SC:700|Slabo+27px' rel='stylesheet' type='text/css'>
+	    <link rel="icon" href="images/C_Icon.png">
+	    <link rel="image_src" href="images/C_Icon.png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="fonts/font-mfizz.ttf">
+		<link rel="stylesheet" href="fonts/font-mfizz.css">
+		<link rel="stylesheet" href="fonts/icons.json">
+		<title> Cole Murphy | Projects.</title>
+	    <meta name="description" content="Reliable, outgoing, detail-oriented developer who loves a challenge.">
+	</head>
+	<body id="bootstrapOverrides" class="projectsPage">
+		<div class="projectsNav">
+			<nav class="navbar navbar-default navbar-fixed-top">
+		      <div class="container">
+		        <div id="navbar">
+		          <ul class="nav navbar-nav">
+		            <li><a href="index.html" title="Home">Home</a></li>
+	                <li><a href="#mismatch" title="Mismatch Instagram Web App"><i class='fa fa-instagram'></i> Mismatch</a></li>
+	                <li><a href="#polish" title="@AnotherCoat Twitter Bot"><i class='fa fa-twitter'></i> Polish Picker</a></li>
+	                <li><a href="#tabber" title="Tabber Chrome Extension"><i class='fa fa-chrome'></i> Tabber</a></li>
+	                <li><a href="#tictactoe" title="Tic-Tac-Toe Game"><i class='fa fa-gamepad'></i> Tic-Tac-Toe</a></li>
+		            <li><a href="https://github.com/fantasticole" target="_blank">GitHub</a></li>
+		          </ul>
+  		          <ul class="nav narrow-nav">
+		            <li><a href="index.html" title="Home"><i class='fa fa-home'></i></a></li>
+	                <li><a href="#mismatch" title="Mismatch Instagram Web App"><i class='fa fa-instagram'></i></a></li>
+	                <li><a href="#polish" title="@AnotherCoat Twitter Bot"><i class='fa fa-twitter'></i></a></li>
+	                <li><a href="#tabber" title="Tabber Chrome Extension"><i class='fa fa-chrome'></i></a></li>
+	                <li><a href="#tictactoe" title="Tic-Tac-Toe Game"><i class='fa fa-gamepad'></i></a></li>
+		            <li><a href="https://github.com/fantasticole" target="_blank" title="Github"><i class='fa fa-github'></i></a></li>
+		          </ul>
+		        </div>
+		      </div>
+		    </nav>
+		</div>
+		<div class="projects">
+			<div id="mismatch" class="projectDetails">
+				<!-- <img src="images/desktop.png" title="Mismatch Instagram Web App"> -->
+		        <img class="wide" src="images/desktop.png" title="Desktop UI">
+				<img class="narrow" src="images/mobile.png" title="Mobile UI">
+				<div class='projectInfo'>
+					<h3>Mismatch Web App:</h3>
+			        <div class="links">
+			          <a href="https://github.com/fantasticole/mismatch/tree/server" target="_blank"><i class='fa fa-github'></i> Code</a> | <a href="https://mismatch.herokuapp.com/" target="_blank"> Site <i class='fa fa-external-link-square'></i></a>
+			        </div>
+			        <p>Have you ever wanted to know who follows you on Instagram that you don't follow back?
+			        </br>What about the accounts you follow that don't return the favor?
+			        </br>Mismatch will help you find out. Visitors log into this browser-based web app using their Instagram accounts. It communicates with the Instagram API to get a list of the visitor's followers as well as the accounts that the user follows. This information is passed through a node server before being graphically displayed using CSS. Once logged in, the visitor can search other handles to find information on the specified user.</p>
+				    </br>
+				    <div class="panel-group" id="accordion">
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class='fa fa-play down'></i> <b>CHALLENGE</b>: Hide the user's access token.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseOne" class="panel-collapse collapse in">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: When the app first went live, there was no server and the access token was passed to the app attached to the redirect URL. To keep this from being shared by anyone passing the link along, I stored the token as a JavaScript variable and cut the token out of the URL window.
+			                </br>
+			                  <div class="well well-sm"><span class="bl">var</span> here = <span class="bl">window</span>.<span class="bl">location</span>.<span class="bl">href</span>;
+			                    </br><span class="bl">var</span> token = here.<span class="bl">slice</span>(here.<span class="bl">indexOf</span>(<span class="gr">'access_token='</span>)+<span class="pr">13</span>);
+			                  </div>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><i class='fa fa-play'></i> <b>CHALLENGE</b>: Find and display the difference between mismatches efficiently.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseTwo" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: When I first built the page, I was making calls to the Instagram API to populate two arrays; one for the user's followers and the other for the accounts that the user follows(ATTUF). Then I would make two more calls to the API, just to get the usernames for each list, in order to compare them and list them on the side of the page. This resulted in hundreds of calls to the Instagram API, which ended up going over my hourly allowance. This taught me that there was a limit to how many calls I could make.
+			                </br></br>To do this more efficiently, I created an array for the user's followers as well as the ATTUF and added them to the user's data object. These two arrays get passed to function <span class="code">oneOrderedArray()</span>, which takes each connection's object and adds <span class="code">following</span>, <span class="code">followedBy</span> or both as keys, sets them as <span class="code">true</span> or <span class="code">false</span> and returns a single array of connections sorted into alphabetical order. This array is fed into the <span class="code">display()</span> function, which checks those keys to see how each user should show up on the site.
+			                </br></br>At first, I printed the mismatches in two lists next to the section displaying followers and ATTUF. That wasn't aesthetically pleasing, so I removed the list, choosing to graphically mark the mismatching accounts in the display section instead. I thought it could still be improved, so I consolidated down to one master list of all of the users associated with the searched account and used CSS to visualize the relationship between the user and each connection.
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><i class='fa fa-play'></i> <b>CHALLENGE</b>: When the visitor searched for a different handle, their connections were still showing up under the searched user's heading.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseThree" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: I found the bug by logging the search results to the console when a new handle was typed in. This showed me that the search was returning that handle's information, it just wasn't displaying properly. That led me to look to the bottom of the list, where I found the new search's connections appended. It was an easy fix to make sure the old information was cleared every time a new search was performed and with every other addition I've remembered to clear what was there before.
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+				</div>
+			</div>
+			<div id="polish" class="projectDetails">
+				<!-- <img src="images/twitterbot.png" title="@AnotherCoat Twitter Bot"> -->
+				<div class='tweets'>
+		          <a href="https://twitter.com/AnotherCoat" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @AnotherCoat</a>
+		          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		          <div id='timeline'></div>
+		        </div>
+				<div class='projectInfo'>
+					<h3>@AnotherCoat Twitter Bot:</h3>
+					<div class="links">
+			          <a href="https://github.com/fantasticole/firsttwitterbot" target="_blank"><i class='fa fa-github'></i> Code</a> | <a href="https://twitter.com/AnotherCoat" target="_blank"> Site <i class='fa fa-external-link-square'></i></a>
+			        </div>
+			        <p>When I decided that I wanted to create a Twitter bot, I wasn't sure what it should tweet. I ended up deciding to do nail polish colors because some brand give them fun names! While looking for the information to populate the data file, I learned about scraping web pages and how to properly format data to be traversed later. This Twitter bot randomly picks a nail polish color from a JSON file and tweets the brand, color name and which collection that color is from.</p>
+				    </br>
+				    <div class="panel-group" id="accordion2">
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion2" href="#collapseFour"><i class='fa fa-play down'></i> <b>CHALLENGE</b>: Scrape the internet for full lists of color names.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseFour" class="panel-collapse collapse in">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: I Googled around to find pages with comprehensive lists of colors for three popular nail polish brands: OPI, Essie and Butter London. Once I found what I was looking for, I inspected the HTML to see how the data was formatted. I scraped the sites to create an array of HTML items by typing <span class="code">var brand = document.getElementsByClassName('class')</span> into the console, where <span class="code">brand</span> and <span class="code">class</span> were substituted according to each site.
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion2" href="#collapseFive"><i class='fa fa-play'></i> <b>CHALLENGE</b>: Format data effectively to be randomly grabbed and tweeted.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseFive" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: Once I had an array of HTML elements, I would write a function using a <span class="code">for</span> loop to grab the brand, color and collection from each item, which I then added to a JavaScript object. I ended up with a JSON formatted to have collections stored as keys whose values were objects containing each color as a key with the brand as it's value. Ex:
+			                </br>
+			                  <div class="well well-sm">{
+			                  </br><span class="tab"><span class="lb">"Sheers"</span>: {</span>
+			                  </br><span class="tab"><span class="tab"><span class="lb">"Blanc"</span>: <span class="lb">"Essie"</span>,</span></span>
+			                  </br><span class="tab"><span class="tab"><span class="lb">"Private Weekend"</span>: <span class="lb">"Essie"</span>,</span></span>
+			                  </br><span class="tab"><span class="tab"><span class="lb">"Marshmallow"</span>: <span class="lb">"Essie"</span>,</span></span>
+			                  </br><span class="tab"><span class="tab"><span class="lb">"Waltz"</span>: <span class="lb">"Essie"</span></span></span>
+			                  </br><span class="tab">}</span>
+			                  </br>};
+			                  </div>
+			                </br>When the JSON file was complete, I wrote a <span class="code">randomizer()</span> function to select a collection, from which it would randomly select a color, which my <span class="code">generateTweet()</span> function would use to compose a string to send as a tweet.
+			                </br>
+			                  <div class="well well-sm"><span class="bl">function</span> <span class="dk">generateTweet</span>(<span class="yw">obj</span>){
+			                  </br><span class="tab"><span class="bl">var</span> collection = randomizer(obj);</span>
+			                  </br><span class="tab"><span class="bl">var</span> color = randomizer(obj[collection]);</span>
+			                  </br><span class="tab"><span class="bl">var</span> brand = obj[collection][color];</span>
+			                  </br><span class="tab"><span class="bl">var</span> tweet = color + <span class="gr">' by '</span> + brand + <span class="gr">' from the '</span> + collection + <span class="gr">' Collection.'</span></span>
+			                  </br><span class="tab">if (tweet.<span class="bl">length</span> <= <span class="pr">140</span>){</span>
+			                  </br><span class="tab"><span class="tab">return tweet;</span></span>
+			                  </br><span class="tab">}</span>
+			                  </br><span class="tab">else{</span>
+			                  </br><span class="tab"><span class="tab">generateTweet(obj);</span></span>
+			                  </br><span class="tab">}</span>
+			                  </br>};
+			                </div>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+				</div>
+			</div>
+			<div id="tabber" class="projectDetails">
+				<!-- <img src="images/graph.png" title="Tabber Graph"> -->
+	            <img class="wide" src="images/graph.png" title="D3.js Graph">
+	            <img class="narrow" src="images/tabber.png" title="Extension Popup">
+				<div class='projectInfo'>
+		            <p style="font-size: 1em;">[<span style="color: #DEC1FF;">Purple</span>: Tab Opens, <span style="color: #60E1E0;">Blue</span>: Tab Closes]</p>
+		            <h3>Tabber Chrome Extension:</h3>
+			        <div class="links">
+			          <a href="https://github.com/fantasticole/Tabber" target="_blank"><i class='fa fa-github'></i> Code</a>
+			        </div>
+			        <p>The Tabber Chrome extension tracks when tabs are opened and closed and displays that information in a popup. The extension offers the user the option to view a D3.js graph, which opens in a new tab, to view hourly averages. The information is stored in Chrome's Local Storage and can be downloaded as a JSON or a TSV from the popup.</p>
+			        </br>
+			        <div class="panel-group" id="accordion3">
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseSix"><i class='fa fa-play down'></i> <b>CHALLENGE</b>: Store and format tab open and close data to be displayed in a D3 graph.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseSix" class="panel-collapse collapse in">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: Whenever a tab is opened or closed, the extension's background.js file creates an object with three keys: <span class="code">Date</span>, <span class="code">Opened</span> and <span class="code">Closed</span>. The <span class="code">Date</span> key gets a timestamp as its value. If a tab was opened, the value of <span class="code">Opened</span> is set to <span class="code">1</span> and <span class="code">Closed</span> is set to <span class="code">0</span>, with the reverse happening when a tab closes. This object is pushed to the <span class="code">Hourly</span> array, which is kept in Chrome's Local Storage. This array is used to find the average hourly opens and closes for the D3.js graph.
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven"><i class='fa fa-play'></i> <b>CHALLENGE</b>: Keep data through extension reloads.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseSeven" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: Throughout its creation, I had to reboot the extension many times. Whenever I did, the data I had stored in Chrome's Local Storage would be wiped. As I was watching my data during the refresh, I noticed that the previous information would only disappear once new data would overwrite it. This led me to my solution: 
+			                </br>
+			                  <div class="well well-sm">if (getStorage(<span class="gr">'hourly'</span>) !== <span class="or">undefined</span>){
+			                    </br><span class="tab">hourly = getStorage(<span class="gr">'hourly'</span>);</span>
+			                    </br>};
+			                  </div>
+			                </br>This if statement allowed me to set the variable equal to what it was before the extension refreshed, keeping the data through each new update.
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion3" href="#collapseEight"><i class='fa fa-play'></i> <b>CHALLENGE</b>: Make the collected data downloadable.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseEight" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: I decided to make the collected data available for download as both a JSON file and a TSV file. The JSON gives more data, including every time a tab was opened or closed since the extension started running, while the TSV gives the hourly averages that get graphed. When the user clicks one of the buttons to download data, a call is made to Local Storage to get either the data stored in <span class="code">tracker</span> (for the JSON) or the data stored in <span class="code">hourly</span> (for the TSV). In order for the information to download properly, I encoded the data as a base-64 string.
+			                </br>
+			                <div class="well well-sm">base64 = <span class="bl">window</span>.<span class="bl">btoa</span>(localStorage.getItem(<span class="gr">'tracker'</span>));
+			                  </br><span class="bl">var</span> url = <span class="gr">'data:application/octet-stream;base64,'</span> + base64;
+			                  </br>chrome.downloads.download({
+			                  </br><span class="tab">url: url,</span>
+			                  </br><span class="tab">filename: <span class="gr">'tab_activity.json'</span></span>
+			                  </br>});
+			                </div>
+			                </br>View some of my data as a <a href="./docs/stats.pdf" target="_blank">TSV</a> or as a <a href="./docs/tab_activity.json" target="_blank">JSON</a>.
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+				</div>
+			</div>
+			<div id="tictactoe" class="projectDetails">
+				<img class="mobile" src="images/ttt.png" title="Tic-Tac-Toe Game">
+				<div class="ttt">
+					<iframe src="http://fantasticole.github.io/Tic-Tac-Toe/"></iframe>
+				</div>
+				<div class="projectInfo">
+					<h3>Tic-Tac-Toe</h3>
+					<div class="links">
+			         <a href="https://github.com/fantasticole/Tic-Tac-Toe" target="_blank"><i class='fa fa-github'></i> Code</a> | <a href="http://fantasticole.github.io/Tic-Tac-Toe/" target="_blank"> Site <i class='fa fa-external-link-square'></i></a>
+			        </div>
+			        <p>This is the first project I built from scratch for my application to <s>Hacker School</s> <a href="https://www.recurse.com/" target="_blank">Recurse Center</a>. It is a two-player Tic-Tac-Toe game that tracks how many wins each player has and alternates which player starts each game.</p>
+				    </br>
+			        <div class="panel-group" id="accordion4">
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseNine"><i class='fa fa-play down'></i> <b>CHALLENGE</b>: Check for the winner efficiently each time a move is made.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseNine" class="panel-collapse collapse in">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: Each tile has an id number. When the user clicks a tile that is available, a function called <span class="code">setMove()</span> pushes an object containing the <span class="code">currentPlayer</span> and the tile's id to an array called <span class="code">boxes</span>. Each time <span class="code">setMove()</span> is called, function <span class="code">checkWin()</span> gets called as well. This runs function <span class="code">getPlayerMoves()</span>, which looks at <span class="code">boxes</span> and returns an array of the current player's tiles. This array is checked against all possible winning combinations. If there is a match, the <span class="code">setWin()</span> function is called, which turns off pointer events for all tiles using CSS.
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseTen"><i class='fa fa-play'></i> <b>CHALLENGE</b>: Track the amount of wins each player has.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseTen" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: I used a JavaScript Object called <span class="code">tally</span> to store the amount of wins each player has. When a visitor first arrives at the page, <span class="code">tally.forX</span> and <span class="code">tally.forO</span> are both set to zero. Once the <span class="code">checkWin()</span> function returns true, the <span class="code">setWin()</span> function gets called with the <span class="code">currentPlayer</span> passed in as a parameter. This function increases the appropriate player's tally based on the input.
+			              </div>
+			            </div>
+			          </div>
+			          <div class="panel panel-default">
+			            <div class="panel-heading">
+			              <h4 class="panel-title">
+			                <a data-toggle="collapse" data-parent="#accordion4" href="#collapseEleven"><i class='fa fa-play'></i> <b>CHALLENGE</b>: Alternate player turn in the game and player starting each game.</a>
+			              </h4>
+			            </div>
+			            <div id="collapseEleven" class="panel-collapse collapse">
+			              <div class="panel-body">
+			                <b>SOLUTION</b>: I created a JavaScript variable <span class="code">currentPlayer</span>, which is originally set to "X", who always starts the first game. I also created a function called <span class="code">otherPlayer()</span>, which takes a player as a parameter and then returns the opponent.
+			                </br>
+			                <div class="well well-sm"><span class="bl">function</span> otherPlayer(<span class="yw">player</span>){
+			                  </br><span class="tab"><span class="bl">var</span> mapping = {<span class="gr">"X"</span>: <span class="gr">"O"</span>, <span class="gr">"O"</span>: <span class="gr">"X"</span>};</span>
+			                  </br><span class="tab">return mapping[player];</span>
+			                  </br>};
+			                </div>
+			                </br>Each time a player moves, <span class="code">currentPlayer</span> is set as what <span class="code">otherPlayer(currentPlayer)</span> returns. Once the game is over, the <span class="code">resetBoard()</span> function is called, which figures out whose turn it is by adding <span class="code">tally.forX</span> and <span class="code">tally.forO</span>. If the number is even, X will start the next game. If it's odd, O starts. This means that in the case of a draw, nobody wins and the same player starts the next game.
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jQuery.js"></script>
+	    <script src="js/twitterFetcher.js"></script>
+		<script src="js/projects.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/ScrollMagic.js"></script>
+		<script src="js/jquery.ScrollMagic.js"></script>
+		<script src="js/plugins/debug.addIndicators.min.js"></script>
+		<script src="js/plugins/animation.gsap.min.js"></script>
+	</body>
+</html>
