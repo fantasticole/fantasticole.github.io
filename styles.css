@@ -493,8 +493,8 @@ footer i {
 	margin-bottom: 25px;
 }
 
-.frame.johnye {
-	background-image: url(images/error/johnye.gif);
+.frame.badrequest {
+	background-image: url(images/error/badrequest.gif);
 	height: 72.96vw;
 	max-width: 349.5px;
 	max-height: 300px;

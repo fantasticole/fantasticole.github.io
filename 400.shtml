@@ -20,7 +20,7 @@
     <div id="content" class="error">
         <h1>400</h1>
         <h2>Bad Request</h2>
-        <img class="frame johnye" src="images/landscape_frame.png" title="Bad Request">
+        <img class="frame badrequest" src="images/landscape_frame.png" title="Bad Request">
         <a href="./">Return Home</a>
     </div>
 </body>
