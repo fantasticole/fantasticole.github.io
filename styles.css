@@ -353,8 +353,15 @@ p {
 	width: 30%;
 }
 
-.info-icon i {
+.info-icon . {
 	font-size: 25px;
+}
+
+.info-icon .icon {
+	height: 25px;
+	width: 25px;
+  margin: auto;
+  color: #fff;
 }
 
 .info-icon img {
